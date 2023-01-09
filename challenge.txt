@@ -1,0 +1,101 @@
+A la vista del usuario, este juego interactivo se desarrolla de la siguiente manera: recibirá una palabra en inglés y la tendrá que tipear en un input en el menor tiempo posible.
+
+Si la palabra tipeada coincide con la recibida, pasa a la siguiente y se le asigna un tiempo extra.
+
+Al empezar la partida, el usuario tendrá 10 segundos para resolver las palabras que se le presentan. A medida que acierta, ese tiempo se modificará a su favor.
+
+Veamos un ejemplo sobre cómo podría quedar este proyecto:
+
+
+RandomWords Function
+In this section of the Project you will create a Function that returns the random words we need.
+For that, you are going to start with this Array in your .js file:
+
+const words = [
+  'californication',
+  'platform5',
+  'black',
+  'summer',
+  'flea',
+  'aeroplane',
+  'peppers',
+  'unlimited',
+  'arcadium',
+  'love',
+  'getaway',
+  'stadium',
+  'quixoticelixer',
+  'quarter',
+  'snow',
+  'dylan',
+  'zephyr',
+  'funky',
+  'chili'
+];
+
+
+Important: reference the HTML elements with your JS. Keep in mind the class and id names when declaring the different variables.
+🏋🏻♀️🏋️ Next follow this step by step:
+
+
+1° - Create the randomWords Function and run it in the console. Before proceeding, make sure it returns a random word.
+
+Declare the variables randomWord, time (starting at 10) and score (starting at 0).
+
+
+I wrote the function addToDOM that adds a random word to the h1 and invoke it.
+
+
+
+Input Type Event
+In this section you will have to create an Event that takes what the user writes in the input and that, in turn, checks the coincidence with the random word.
+For that you will make an Event of type input. Follow this Step by Step to do it:
+Write the Event that applies to the referenced input of type text.
+Create the Event Function that has an "e" parameter (which you will use later).
+Hint:
+If you want to see what this parameter is, do a console.log(e) and write something in your input.
+
+Create a variable called wordInput.
+Compare the variables wordInput and wordRandom. Test that everything works correctly.
+If the words match, make the following happen:
+Make the variable time increase by 3 seconds.
+That the input becomes empty again.
+Call the function addToDOM() again.
+Manipulating Time
+In this section you are going to create the functionalities to manage the time of the game.
+For that, follow this step by step:
+You will declare the Function updateTime where the variable time counts down from 1 to 1. This action should be seen on screen.
+Hint: 
+Apply this to the element with the id timeSpan. Remember to reference the elements with your HTML.
+
+Create the variable called timeInterval (outside the function updateTime) as follows:
+let timeInterval = setInterval(updateTime, 1000);
+Go back to the function updateTime and set the following condition: if the variable time reaches 0 make use of the method clearInterval passing it as parameter the corresponding variable. This makes it possible that the counter cuts off at 0 and does not continue its action with negative numbers.
+
+Condition
+
+Solution: 
+
+if (time === 0) {
+clearInterval(timeInterval);
+
+
+Functions
+In this section you will work on the last two functions: updateScore and gameOver.
+Function updateScore
+To correctly implement this Function follow this step by step:
+Create the function updateScore which will increment the score variable by 1.
+Add your score variable to the HTML element referenced with the score id.
+Once your Function is finished, invoke it when the user enters the word correctly.
+If all goes well you should see the score increase as the word is correctly entered.
+Function gameOver
+To implement correctly this Function follow this step by step:
+Create the Function gameOver that has as purpose to add elements to the container with the id end-game-container.
+A este contenedor le agregarás:
+Un título que le indique al usuario cuando se haya quedado sin tiempo.
+Un párrafo que muestre el puntaje final de la partida.
+El siguiente botón:
+<button onclick="location.reload()">Volvé a empezar</button>
+
+Volvé a la Función actualizarTiempo y que dentro del if se invoque la Función gameOver. Además, pensá cómo podrías remover el contenedor con class main para que el estado de la partida se actualice.
+Important: you already have all the functionalities of your project. Test it before giving it the style you want.

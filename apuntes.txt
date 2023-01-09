@@ -14,3 +14,43 @@
 //   }
   
 //   console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+
+
+with that function capture de value of the input with the event keypress and 
+push into the empty string to compare the result with my variable.
+
+function getValue(){
+
+window.addEventListener("keypress", function() {
+    let letter = "";
+    var text = document.getElementById("text").value;
+    letter.split('');
+    // let textEnd = letter.split('').join('');
+    console.log(text);
+
+});
+
+}
+
+getValue()
+
+
+
+
+
+but with that function now a capture the value but now is an empty array
+
+function getValue(){
+
+window.addEventListener("keypress", function() {
+    let letter = [];
+    var text = document.getElementById("text").value;
+    letter.push(text);
+    let textEnd = letter.join('').split('');
+    console.log(textEnd);
+
+});
+
+}
+
+getValue()
